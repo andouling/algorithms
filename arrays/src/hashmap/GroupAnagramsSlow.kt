@@ -1,5 +1,8 @@
 package hashmap
 
+/**
+ * https://leetcode.com/problems/group-anagrams/
+ */
 object GroupAnagramsSlow {
     fun groupAnagrams(strs: Array<String>): List<List<String>> {
         //eat, tan, tea, nat, bat

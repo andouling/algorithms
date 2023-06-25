@@ -1,12 +1,11 @@
+package min
 import java.util.*
 
 /**
  * https://leetcode.com/problems/top-k-frequent-elements/
- * https://leetcode.com/problems/top-k-frequent-elements/submissions/969677477/
  */
 object TopKElements {
     fun topKFrequent(nums: IntArray, k: Int): IntArray {
-
         val map = mutableMapOf<Int, Int>()
         val ans = IntArray(k)
         for (num in nums) {

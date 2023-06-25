@@ -1,5 +1,8 @@
 package hashmap
 
+/**
+ * https://leetcode.com/problems/valid-anagram/
+ */
 object ValidAnagram {
 
     fun isAnagram(s: String, t: String): Boolean {

@@ -1,5 +1,8 @@
 package sort
 
+/**
+ * https://leetcode.com/problems/two-sum/
+ */
 object TwoSum {
 
     /**

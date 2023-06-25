@@ -1,4 +1,4 @@
-package hashmap
+package sort
 
 /**
  * https://leetcode.com/problems/top-k-frequent-elements/
@@ -6,8 +6,8 @@ package hashmap
 object TopKElements {
 
     fun topKFrequent(nums: IntArray, k: Int): IntArray {
-        // sorting an array by count would be N * Log(N) TreeSet
-        // count occurences by char and store counts separately
+        // sorting by count on each insertion would be N * Log(N) using TreeSet or else
+        // count occurrences by char and store counts separately
 
         // another approach is to use PriorityHeap
 
@@ -16,14 +16,17 @@ object TopKElements {
 
         val map: MutableMap<Int, Int> = mutableMapOf()
 
+        //O(N)
         nums.forEach {
             val old = map[it]
             map[it] = (old ?: 0) + 1
         }
 
+        // O(Log(N))
         val sortedList = map.entries.sortedByDescending {
             it.value
         }
+        // O(K) -> O(N) + O(Log(N)) + O(K) = O(N)
         return IntArray(k) { sortedList[it].key }
     }
 }
