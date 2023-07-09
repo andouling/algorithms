@@ -13,6 +13,7 @@ object FastLongestRepeatingCharacterReplacement {
             val index = s[right] - 'A'
             frequency[index]++
             maxCount = Math.max(maxCount, frequency[index])
+            //here is the trick (ここがポイントです)
             while (right - left + 1 - maxCount > k) {
                 frequency[s[left] - 'A']--
                 left++
